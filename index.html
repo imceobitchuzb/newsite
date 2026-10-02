@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark" data-accent="cyan">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA — High Performance Universal Web Platform</title>
+  <meta name="description" content="A blazing fast, elegant, and universal web platform. Crafted for digital products, portfolios, tech startups, and creative agencies.">
+  <meta name="keywords" content="fast website, modern portfolio, web agency, responsive design, dark mode, glassmorphism">
+  <meta name="author" content="imceobitchuzb">
+  
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://imceobitchuzb.github.io/newsite/">
+  <meta property="og:title" content="NOVA — Fast, Beautiful & Universal Platform">
+  <meta property="og:description" content="Ultra-fast performance, modern glassmorphism aesthetics, bilingual support, and interactive customization.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Dynamic Canvas & Aurora Blobs -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="aurora-bg">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="aurora-blob blob-3"></div>
+  </div>
+
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="#hero" class="brand">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+        </div>
+        <span>NOVA<span class="text-gradient">.</span></span>
+      </a>
+
+      <!-- Desktop & Mobile Nav Links -->
+      <nav class="nav-links" id="nav-links">
+        <a href="#features" class="nav-link" data-i18n="navFeatures">Возможности</a>
+        <a href="#showcase" class="nav-link" data-i18n="navProjects">Проекты</a>
+        <a href="#pricing" class="nav-link" data-i18n="navPricing">Тарифы</a>
+        <a href="#faq" class="nav-link" data-i18n="navFaq">FAQ</a>
+        <a href="#contact" class="nav-link" data-i18n="navContact">Контакты</a>
+      </nav>
+
+      <!-- Nav Controls -->
+      <div class="nav-controls">
+        <!-- Interactive Accent Color Picker -->
+        <div class="accent-customizer" title="Select Accent Theme">
+          <span style="display: none;">Color</span>
+          <div class="color-dot active" data-color="cyan" title="Cyan Neon"></div>
+          <div class="color-dot" data-color="violet" title="Electric Violet"></div>
+          <div class="color-dot" data-color="emerald" title="Matrix Emerald"></div>
+          <div class="color-dot" data-color="amber" title="Sunset Amber"></div>
+        </div>
+
+        <!-- Language Switcher -->
+        <button id="lang-toggle" class="btn-icon" title="Switch Language" style="font-weight: 700; font-size: 0.82rem;">EN</button>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="btn-icon" title="Toggle Theme" aria-label="Toggle Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- Primary CTA -->
+        <a href="#contact" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.88rem;" data-i18n="navContact">Связаться</a>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="section hero-section" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="status-dot"></span>
+          <span data-i18n="badgeText">v2.0 Универсальная Веб-Платформа</span>
+        </div>
+        <h1 class="hero-title">
+          <span data-i18n="heroTitlePrefix">Создавай будущее с</span><br>
+          <span class="text-gradient rotating-word" id="rotating-word">Высокой Скоростью</span>
+        </h1>
+        <p class="hero-desc" data-i18n="heroDesc">
+          Сверхбыстрый, модульный сайт нового поколения для портфолио, стартапа, студии или цифрового продукта. Создан для максимальной скорости, красоты и гибкости.
+        </p>
+        <div class="hero-cta">
+          <a href="#showcase" class="btn btn-primary">
+            <span data-i18n="heroCtaPrimary">Смотреть проекты</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="https://github.com/imceobitchuzb/newsite" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            <span data-i18n="heroCtaSecondary">Репозиторий GitHub</span>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3 class="counter-val" data-target="100" data-suffix="/100">0</h3>
+            <p data-i18n="statSpeed">Баллы Lighthouse</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="counter-val" data-target="99" data-suffix=".9%">0</h3>
+            <p data-i18n="statUptime">Гарантия аптайма</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="counter-val" data-target="120" data-suffix="+">0</h3>
+            <p data-i18n="statUsers">Проектов и звезд</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Interactive Visual Window Mockup -->
+      <div class="hero-card-wrapper">
+        <div class="showcase-window">
+          <div class="window-header">
+            <div class="window-dots">
+              <span class="dot-red"></span>
+              <span class="dot-yellow"></span>
+              <span class="dot-green"></span>
+            </div>
+            <div class="window-title">nova-system.status ~ live</div>
+            <div style="width: 40px;"></div>
+          </div>
+          <div class="window-body">
+            <div class="metric-card-grid">
+              <div class="metric-card">
+                <div class="label" data-i18n="metric1Label">Время рендера</div>
+                <div class="val">
+                  <span>14ms</span>
+                  <span class="val-badge">ULTRA</span>
+                </div>
+              </div>
+              <div class="metric-card">
+                <div class="label" data-i18n="metric2Label">Размер сборки</div>
+                <div class="val">
+                  <span>0 kB</span>
+                  <span class="val-badge">ZERO-DEP</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="code-preview">
+              <p><span class="keyword">const</span> <span class="function">platform</span> = <span class="keyword">new</span> <span class="function">NovaCore</span>({</p>
+              <p style="padding-left: 1.2rem;">speed: <span class="string">"instant"</span>,</p>
+              <p style="padding-left: 1.2rem;">design: <span class="string">"glassmorphism"</span>,</p>
+              <p style="padding-left: 1.2rem;">themes: [<span class="string">"cyan"</span>, <span class="string">"violet"</span>, <span class="string">"emerald"</span>, <span class="string">"amber"</span>],</p>
+              <p style="padding-left: 1.2rem;">readyFor: <span class="string">"GitHub Pages"</span></p>
+              <p>});</p>
+              <p><span class="comment">// 🚀 100% production ready & reactive</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" data-i18n="featuresTag">Возможности</div>
+        <h2 class="section-title" data-i18n="featuresTitle">Спроектировано для совершенства</h2>
+        <p class="section-subtitle" data-i18n="featuresSubtitle">Всё необходимое для презентации продуктов, услуг или личного бренда на высшем уровне.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="glass-panel feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <h3 class="feature-title" data-i18n="feat1Title">Молниеносная скорость</h3>
+          <p class="feature-desc" data-i18n="feat1Desc">Статическая архитектура без лишних зависимостей. Мгновенная загрузка и плавные 60fps анимации.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="glass-panel feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title" data-i18n="feat2Title">Двуязычный и универсальный</h3>
+          <p class="feature-desc" data-i18n="feat2Desc">Мгновенное переключение языков (RU/EN), модульная сетка для портфолио, SaaS или веб-агентства.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="glass-panel feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3 class="feature-title" data-i18n="feat3Title">Адаптивный Glassmorphism</h3>
+          <p class="feature-desc" data-i18n="feat3Desc">Эффект матового стекла, неоновые акценты и идеальная адаптивность под смартфоны и мониторы.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="glass-panel feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path><path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path><path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title" data-i18n="feat4Title">Живой движок тем</h3>
+          <p class="feature-desc" data-i18n="feat4Desc">Интерактивная смена цветовых акцентов (Циан, Фиолетовый, Изумрудный, Янтарный) и светлая/тёмная тема.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="glass-panel feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <h3 class="feature-title" data-i18n="feat5Title">SEO и соцсети на 100%</h3>
+          <p class="feature-desc" data-i18n="feat5Desc">Семантический HTML5, теги OpenGraph и разметка для мгновенной индексации в Google и Яндекс.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="glass-panel feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+              <line x1="12" y1="11" x2="12" y2="17"></line>
+              <line x1="9" y1="14" x2="15" y2="14"></line>
+            </svg>
+          </div>
+          <h3 class="feature-title" data-i18n="feat6Title">Готов к GitHub Pages</h3>
+          <p class="feature-desc" data-i18n="feat6Desc">Развёртывание в 1 клик с готовым GitHub Actions workflow без необходимости арендовать сервер.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase / Projects Section -->
+  <section class="section" id="showcase">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" data-i18n="showcaseTag">Портфолио и работы</div>
+        <h2 class="section-title" data-i18n="showcaseTitle">Избранные проекты</h2>
+        <p class="section-subtitle" data-i18n="showcaseSubtitle">Ознакомьтесь с интерактивными разработками, веб-приложениями и креативными экспериментами.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all" data-i18n="filterAll">Все проекты</button>
+        <button class="filter-btn" data-filter="web" data-i18n="filterWeb">Веб-сервисы</button>
+        <button class="filter-btn" data-filter="design" data-i18n="filterDesign">UI/UX Дизайн</button>
+        <button class="filter-btn" data-filter="mobile" data-i18n="filterMobile">Мобильные & Cloud</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="glass-panel project-card" data-category="web">
+          <div class="project-img-wrapper">
+            <div class="project-preview-mockup" style="background: linear-gradient(135deg, #0284c7, #6366f1);">
+              <span>NovaCloud // BI</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">Cloud Telemetry</div>
+            <h4 class="project-title">NovaCloud Analytics</h4>
+            <p class="project-desc">Платформа сбора и визуализации метрик с субсекундным рендерингом данных и живыми графиками.</p>
+            <div class="project-tags">
+              <span class="tag-badge">WebSockets</span>
+              <span class="tag-badge">Canvas API</span>
+              <span class="tag-badge">TypeScript</span>
+            </div>
+            <div class="project-footer">
+              <button class="project-link-btn open-modal-btn" data-project-id="1">
+                <span>Подробнее</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="glass-panel project-card" data-category="design">
+          <div class="project-img-wrapper">
+            <div class="project-preview-mockup" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);">
+              <span>Apex UI Tokens</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">Design System</div>
+            <h4 class="project-title">Apex Design System</h4>
+            <p class="project-desc">Масштабируемая библиотека компонентов со строгим контролем контраста, микро-анимациями и токенами.</p>
+            <div class="project-tags">
+              <span class="tag-badge">Design Tokens</span>
+              <span class="tag-badge">WCAG 2.1</span>
+              <span class="tag-badge">Figma</span>
+            </div>
+            <div class="project-footer">
+              <button class="project-link-btn open-modal-btn" data-project-id="2">
+                <span>Подробнее</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="glass-panel project-card" data-category="web">
+          <div class="project-img-wrapper">
+            <div class="project-preview-mockup" style="background: linear-gradient(135deg, #10b981, #06b6d4);">
+              <span>HyperFlow AI</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">AI Orchestration</div>
+            <h4 class="project-title">HyperFlow Engine</h4>
+            <p class="project-desc">Интерактивный дашборд управления конвейерами автономных агентов и стриминга токенов.</p>
+            <div class="project-tags">
+              <span class="tag-badge">AI Pipeline</span>
+              <span class="tag-badge">Streaming</span>
+              <span class="tag-badge">FastAPI</span>
+            </div>
+            <div class="project-footer">
+              <button class="project-link-btn open-modal-btn" data-project-id="3">
+                <span>Подробнее</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="glass-panel project-card" data-category="mobile">
+          <div class="project-img-wrapper">
+            <div class="project-preview-mockup" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">
+              <span>Quantum Pay</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">Fintech Mobile</div>
+            <h4 class="project-title">Quantum Pay Gateway</h4>
+            <p class="project-desc">Эргономичный мобильный чекаут с поддержкой биометрии и мгновенным подтверждением транзакций.</p>
+            <div class="project-tags">
+              <span class="tag-badge">PWA</span>
+              <span class="tag-badge">Biometrics</span>
+              <span class="tag-badge">FinTech</span>
+            </div>
+            <div class="project-footer">
+              <button class="project-link-btn open-modal-btn" data-project-id="4">
+                <span>Подробнее</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="glass-panel project-card" data-category="design">
+          <div class="project-img-wrapper">
+            <div class="project-preview-mockup" style="background: linear-gradient(135deg, #14b8a6, #3b82f6);">
+              <span>Krypton 3D</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">3D Interactive</div>
+            <h4 class="project-title">Krypton WebGL Experience</h4>
+            <p class="project-desc">Интерактивная 3D витрина продуктов с динамическими шейдерами и пространственным освещением.</p>
+            <div class="project-tags">
+              <span class="tag-badge">WebGL</span>
+              <span class="tag-badge">Three.js</span>
+              <span class="tag-badge">Shaders</span>
+            </div>
+            <div class="project-footer">
+              <button class="project-link-btn open-modal-btn" data-project-id="5">
+                <span>Подробнее</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="glass-panel project-card" data-category="mobile">
+          <div class="project-img-wrapper">
+            <div class="project-preview-mockup" style="background: linear-gradient(135deg, #6366f1, #a855f7);">
+              <span>OmniSync</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">Offline-first Engine</div>
+            <h4 class="project-title">OmniSync Storage</h4>
+            <p class="project-desc">Клиентское распределенное хранилище для мгновенной работы без интернета и шифрованной синхронизации.</p>
+            <div class="project-tags">
+              <span class="tag-badge">Service Worker</span>
+              <span class="tag-badge">IndexedDB</span>
+              <span class="tag-badge">Wasm</span>
+            </div>
+            <div class="project-footer">
+              <button class="project-link-btn open-modal-btn" data-project-id="6">
+                <span>Подробнее</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing / Services Section -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" data-i18n="pricingTag">Гибкие тарифы</div>
+        <h2 class="section-title" data-i18n="pricingTitle">Прозрачные условия</h2>
+        <p class="section-subtitle" data-i18n="pricingSubtitle">Масштабируемые решения для проектов любого уровня и сложности.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Plan 1 -->
+        <div class="glass-panel pricing-card">
+          <div class="pricing-tier" data-i18n="planStarter">Стартовый</div>
+          <p class="pricing-desc" data-i18n="planStarterDesc">Отлично подходит для персонального сайта, резюме и презентации личных проектов.</p>
+          <div class="price-wrap">
+            <span class="price-val">$0</span>
+            <span class="price-period">/ open-source</span>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Полный исходный код</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Хостинг на GitHub Pages</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>4 цветовые темы + тёмная/светлая</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Двуязычный модуль (RU / EN)</span>
+            </li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary">Выбрать Starter</a>
+        </div>
+
+        <!-- Plan 2 (Featured) -->
+        <div class="glass-panel pricing-card featured">
+          <div class="featured-badge">Рекомендуемый</div>
+          <div class="pricing-tier" data-i18n="planPro">Профессиональный</div>
+          <p class="pricing-desc" data-i18n="planProDesc">Идеально для растущих стартапов, агентств и конверсионных презентаций.</p>
+          <div class="price-wrap">
+            <span class="price-val">$490</span>
+            <span class="price-period">/ проект</span>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Всё из Стартового пакета</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Кастомный брендинг и стиль</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Интеграция Telegram бота для лидов</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>SEO-оптимизация под поисковики</span>
+            </li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Заказать Pro</a>
+        </div>
+
+        <!-- Plan 3 -->
+        <div class="glass-panel pricing-card">
+          <div class="pricing-tier" data-i18n="planEnterprise">Корпоративный</div>
+          <p class="pricing-desc" data-i18n="planEnterpriseDesc">Индивидуальная архитектура, уникальная дизайн-система и сопровождение под ключ.</p>
+          <div class="price-wrap">
+            <span class="price-val">Custom</span>
+            <span class="price-period">/ контракт</span>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Индивидуальный WebGL / 3D дизайн</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Высоконагруженный Backend API</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Аудит безопасности и SLA 99.99%</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Персональная поддержка 24/7</span>
+            </li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary">Обсудить проект</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" data-i18n="faqTag">Есть вопросы?</div>
+        <h2 class="section-title" data-i18n="faqTitle">Часто задаваемые вопросы</h2>
+        <p class="section-subtitle" data-i18n="faqSubtitle">Ответы на популярные вопросы о кастомизации, хостинге и возможностях платформы.</p>
+      </div>
+
+      <div class="faq-container">
+        <!-- Q1 -->
+        <div class="glass-panel faq-item active">
+          <button class="faq-question">
+            <span>Как развернуть сайт на GitHub Pages бесплатно?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            Сайт полностью статичен и не требует установки Node.js или серверов. Достаточно зайти в настройки вашего репозитория на GitHub: <code>Settings &rarr; Pages &rarr; Source: Deploy from a branch &rarr; Branch: main &rarr; / (root) &rarr; Save</code>. Сайт станет доступен через 30 секунд по адресу <code>https://imceobitchuzb.github.io/newsite/</code>.
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="glass-panel faq-item">
+          <button class="faq-question">
+            <span>Как поменять тексты, проекты или контактные данные?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            Все тексты двуязычного перевода находятся в удобном файле <code>js/translations.js</code>. Проекты и их модальные окна описаны в <code>index.html</code> и объекте <code>projectDetails</code> в <code>js/main.js</code>. Вы можете редактировать их прямо в GitHub или в любом редакторе кода.
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="glass-panel faq-item">
+          <button class="faq-question">
+            <span>Как работают цветовые темы и адаптивность?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            Дизайн-система построена на нативных CSS-переменных (CSS Custom Properties). Смена темы происходит мгновенно и без перезагрузки страницы, а выбор пользователя сохраняется в <code>localStorage</code> браузера.
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="glass-panel faq-item">
+          <button class="faq-question">
+            <span>Можно ли подключить собственный домен?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            Да! GitHub Pages поддерживает любые собственные домены (например, <code>yourdomain.com</code>) с автоматическим бесплатным SSL-сертификатом от Let's Encrypt. Достаточно прописать файл <code>CNAME</code> или указать домен в настройках репозитория.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" data-i18n="contactTag">Связаться</div>
+        <h2 class="section-title" data-i18n="contactTitle">Давайте создадим нечто выдающееся</h2>
+        <p class="section-subtitle" data-i18n="contactSubtitle">Есть интересная идея или задача? Напишите сообщение, и мы воплотим её в реальность.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Info Cards -->
+        <div class="glass-panel contact-info-card">
+          <h3>На связи 24/7</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 2rem;">Открыт к новым предложениям, разработке веб-сервисов, консультациям и партнерству.</p>
+          
+          <div class="contact-methods">
+            <div class="contact-method-item">
+              <div class="method-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </div>
+              <div class="method-text">
+                <div class="title">GitHub</div>
+                <a href="https://github.com/imceobitchuzb" target="_blank" rel="noopener noreferrer" class="value">@imceobitchuzb</a>
+              </div>
+            </div>
+
+            <div class="contact-method-item">
+              <div class="method-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="method-text">
+                <div class="title">Email</div>
+                <div class="value">contact@novafuture.dev</div>
+              </div>
+            </div>
+
+            <div class="contact-method-item">
+              <div class="method-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="method-text">
+                <div class="title">Location</div>
+                <div class="value">Tashkent, Uzbekistan / Worldwide</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Form -->
+        <form class="glass-panel contact-form" id="contact-form">
+          <div class="form-group">
+            <label class="form-label" data-i18n="formName">Ваше имя</label>
+            <input type="text" class="form-control" required placeholder="Александр" data-i18n-placeholder="formName">
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-i18n="formEmail">Ваш Email</label>
+            <input type="email" class="form-control" required placeholder="alex@example.com" data-i18n-placeholder="formEmail">
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-i18n="formSubject">Тема сообщения</label>
+            <input type="text" class="form-control" required placeholder="Разработка сайта / Проект" data-i18n-placeholder="formSubject">
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-i18n="formMessage">Расскажите о вашей задаче...</label>
+            <textarea class="form-control" required placeholder="Опишите задачу или проект..." data-i18n-placeholder="formMessage"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem;" data-i18n="formSubmit">Отправить сообщение</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#hero" class="brand">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <span>NOVA<span class="text-gradient">.</span></span>
+        </a>
+
+        <div class="social-links">
+          <a href="https://github.com/imceobitchuzb/newsite" target="_blank" rel="noopener noreferrer" class="btn-icon" title="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 NOVA Universal Platform. Open-source under MIT License.</p>
+        <p>Built with speed, passion & precision for <a href="https://github.com/imceobitchuzb" target="_blank" style="color: var(--primary); font-weight: 600;">@imceobitchuzb</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Detail Modal -->
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <h3 id="modal-title" style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem;">Project Details</h3>
+      <p id="modal-desc" style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;"></p>
+      <div id="modal-tags" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;"></div>
+      <div style="display: flex; gap: 1rem;">
+        <a id="modal-action-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="flex: 1;">Смотреть исходный код</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
